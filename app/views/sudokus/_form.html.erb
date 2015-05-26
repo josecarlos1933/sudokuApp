@@ -1,0 +1,38 @@
+<%= form_for(@sudoku) do |f| %>
+  <% if @sudoku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sudoku.errors.count, "error") %> prohibited this sudoku from being saved:</h2>
+
+      <ul>
+      <% @sudoku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :difficulty %><br />
+    <%= f.label :difficulty, "Easy", :value => "Easy"  %>
+    <%= f.radio_button :difficulty, true, :checked => true %>
+    <%= f.label :difficulty, "Medium", :value => "Medium" %>
+    <%= f.radio_button :difficulty, false%>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :solution %><br>
+    <%= f.text_field :solution %>
+  </div>
+  <div class="field">
+    <%= f.label :player_id %><br>
+    <%= f.number_field :player_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>   

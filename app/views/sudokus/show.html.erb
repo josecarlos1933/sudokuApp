@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @sudoku.difficulty %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @sudoku.time %>
+</p>
+
+<p>
+  <strong>Solution:</strong>
+  <%= @sudoku.solution %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @sudoku.player_id %>
+</p>
+  <div class="actions">
+  <%= form_for(@sudoku) do |f| %>
+  <% if @sudoku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sudoku.errors.count, "error") %> prohibited this sudoku from being saved:</h2>
+
+      <ul>
+      <% @sudoku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= require "sudoku_maker" 
+      @vec1 = Array.new
+      @display = Array.new
+      @vec1 = p SudokuMaker.make 9
+
+      if @sudoku.difficulty == 'true'
+      	      @display = [1,2,3,4,5,6,7,8,9]
+      
+      @display.each do |vec1|%>
+
+        <h2><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %></h2> 
+
+    <%end
+
+    end
+         if @sudoku.difficulty == 'false'
+      	      @display = [1,2,3,4,5,6,7,8,9]
+      
+      @display.each do |vec1|%>
+
+        <h2><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %><%= f.number_field :time%><%= f.number_field :time %><%= f.number_field :time %></h2> 
+
+    <%end
+    
+    end%>
+
+
+   <% end %>   
+  </div>
+
+<%= link_to 'Edit', edit_sudoku_path(@sudoku) %> |
+<%= link_to 'Back', sudokus_path %>
