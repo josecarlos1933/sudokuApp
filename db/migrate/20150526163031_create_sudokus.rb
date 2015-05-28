@@ -4,7 +4,7 @@ class CreateSudokus < ActiveRecord::Migration
       t.string :difficulty
       t.string :time
       t.string :solution
-      t.integer :player_id
+      t.string :player_id
 
       t.timestamps null: false
     end

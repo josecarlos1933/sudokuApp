@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150526163031) do
     t.string   "difficulty"
     t.string   "time"
     t.string   "solution"
-    t.integer  "player_id"
+    t.string   "player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

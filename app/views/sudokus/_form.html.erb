@@ -14,24 +14,18 @@
   <div class="field">
     <%= f.label :difficulty %><br />
     <%= f.label :difficulty, "Easy", :value => "Easy"  %>
-    <%= f.radio_button :difficulty, true, :checked => true %>
-    <%= f.label :difficulty, "Medium", :value => "Medium" %>
-    <%= f.radio_button :difficulty, false%>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.text_field :time %>
-  </div>
-  <div class="field">
-    <%= f.label :solution %><br>
-    <%= f.text_field :solution %>
+    <%= f.radio_button :difficulty, "easy", :checked => true %>
+    <%= f.label :difficulty, "Medium", :value => "Medium"  %>
+    <%= f.radio_button :difficulty, "medium"%>
+        <%= f.label :difficulty, "Hard", :value => "Hard"  %>
+    <%= f.radio_button :difficulty, "hard" %>
   </div>
   <div class="field">
     <%= f.label :player_id %><br>
-    <%= f.number_field :player_id %>
+    <%= f.text_field :player_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :PLAY %>
   </div>
 
 
