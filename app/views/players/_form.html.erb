@@ -1,25 +1,27 @@
-<%= form_for(@player) do |f| %>
-  <% if @player.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+<div class="form" style="position: absolute;  top: 50%; left: 50%; width: 800px; height: 600px; margin-left: -220px; margin-top: -200px; font-size: 24px; color: gray; opacity: 0.8;">
+  <%= form_for(@player) do |f| %>
+    <% if @player.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
 
-      <ul>
-      <% @player.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @player.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :nick %><br>
+      <%= f.text_field :nick %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :nick %><br>
-    <%= f.text_field :nick %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
